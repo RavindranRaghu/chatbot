@@ -7,19 +7,33 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.headerBot {
+    background-color: #282c34;
+    min-height: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left:10px;
+    justify-content: center;
+    font-size: calc(15px + 2vmin);
+    color: white;
+}
+
+.footerBot {
+    background-color: whitesmoke;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    font-size: calc(15px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {

@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "react": "^16.5.2",
+    "react-chat-widget": "^2.1.4-1",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "react-speech": "^0.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
