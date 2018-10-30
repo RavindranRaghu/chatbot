@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Widget, addResponseMessage, addLinkSnippet, addUserMessage } from 'react-chat-widget';
 
-import 'react-chat-widget/lib/styles.css';
+import './styles.css';
 
 import logo from './JarvisNew.png';
 import tick from './tick.png';
