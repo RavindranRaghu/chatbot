@@ -15,6 +15,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://askme.a2hosted.com",
   "eslintConfig": {
     "extends": "react-app"
   },
