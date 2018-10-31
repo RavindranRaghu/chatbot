@@ -49,7 +49,7 @@ class App extends Component {
     }
 
     startResponse = () => {
-        var url = "http://askme.a2hosted.com/home/startchat";
+        var url = "//askme.a2hosted.com/home/startchat";
         //url = "http://localhost:53648/home/startchat";
         var footer = document.getElementsByClassName("suggestionFooter")[0];
         console.log({ loading });
@@ -88,7 +88,7 @@ class App extends Component {
 
 
     fetchResponse = (message, node, sessionId) => {
-        var url = "http://askme.a2hosted.com/home/chat?message=" + message + "&node=" + node + "&sessionId=" + sessionId;
+        var url = "//askme.a2hosted.com/home/chat?message=" + message + "&node=" + node + "&sessionId=" + sessionId;
         //url = "http://localhost:53648/home/chat?message=" + message + "&node=" + node + "&sessionId=" + sessionId;
         var footer = document.getElementsByClassName("suggestionFooter")[0];
         console.log({ loading });
