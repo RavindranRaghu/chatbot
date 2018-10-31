@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 import { Widget, addResponseMessage, addLinkSnippet, addUserMessage } from 'react-chat-widget';
 
 import './styles.css';
@@ -49,7 +49,9 @@ class App extends Component {
     }
 
     startResponse = () => {
-        var url = "https://askme.a2hosted.com/home/startchat";
+        var url = "https://cors-anywhere.herokuapp.com/";
+        var url1 = "https://askme.a2hosted.com/home/startchat";
+        url = url + url1;
         //url = "/home/startchat";
         var footer = document.getElementsByClassName("suggestionFooter")[0];
         console.log({ loading });
@@ -57,7 +59,17 @@ class App extends Component {
             footer.style.display = "block";
         }
 
-        fetch(url)
+        var myHeaders = new Headers();        
+        myHeaders.append('Access-Control-Allow-Origin', '*');
+
+        var myInit = {
+            method: 'GET',
+            headers: myHeaders,
+            mode: 'cors',
+            cache: 'default'
+        };
+
+        fetch(url, myInit)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -83,20 +95,33 @@ class App extends Component {
                     });
                 }
             )
+
+
     }
 
 
 
     fetchResponse = (message, node, sessionId) => {
-        var url = "https://askme.a2hosted.com/home/chat?message=" + message + "&node=" + node + "&sessionId=" + sessionId;
-        //url = "/home/chat?message=" + message + "&node=" + node + "&sessionId=" + sessionId;
+        var url = "https://cors-anywhere.herokuapp.com/";
+        var url1 = "https://askme.a2hosted.com/home/chat?message=" + message + "&node=" + node + "&sessionId=" + sessionId;
+        url = url + url1;        
         var footer = document.getElementsByClassName("suggestionFooter")[0];
         console.log({ loading });
         if (footer != null) {
             footer.style.display = "block";
         }
 
-        fetch(url)
+        var myHeaders = new Headers();
+        myHeaders.append('Access-Control-Allow-Origin', '*');
+
+        var myInit = {
+            method: 'GET',
+            headers: myHeaders,
+            mode: 'cors',
+            cache: 'default'
+        };
+
+        fetch(url, myInit)
             .then(res => res.json())
             .then(
                 (result) => {
