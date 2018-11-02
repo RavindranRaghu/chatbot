@@ -1,9 +1,11 @@
 ﻿import React, { Component } from 'react';
 import { Widget, addResponseMessage, addLinkSnippet, addUserMessage } from 'react-chat-widget';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './styles.css';
 
-import logo from './JarvisNew.png';
+import logo from './jarvis.png';
 import tick from './tick.png';
 import loading from './loadchat.gif';
 import beep from './beep.mp3';
@@ -77,7 +79,7 @@ class App extends Component {
                         isLoaded: true,
                         response: result
                     });
-                    addResponseMessage(result.response)
+                    addResponseMessage(result.response);                    
                     document.getElementById("node").value = result.node;
                     document.getElementById("sessionId").value = result.sessionId;
                     console.log("node:" + result.node);
@@ -129,7 +131,9 @@ class App extends Component {
                         isLoaded: true,
                         response: result
                     });
-                    addResponseMessage(result.response)
+                    var responseText = result.response;
+                    responseText = responseText.replace(/<br>/g, "");
+                    addResponseMessage(responseText)
                     document.getElementById("node").value = result.node;
                     console.log("node:" + result.node);
                     var suggestList = '';
@@ -151,23 +155,29 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">    
-                <Widget
-                    handleNewUserMessage={this.handleNewUserMessage}
-                    profileAvatar={logo}
-                    title="ChaT Bot ai"
-                    subtitle="TCS Chat Product"
-                    toggleChat={true}
-                    showChat={true}
-                    launch={true}
-                    customLauncher={true}
-                />
-                <div id="suggestion" className="suggestionBox" >
-                    <div class="suggestionheader">Suggestion: <img src={tick} /></div> <hr />
-                    <div id="suggestionBody">Suggestion: </div>
-                    <div class="suggestionFooter"><img src={loading} /></div> <hr/>
-                    <div className="usefulLinkheader">
-                        <span>Useful Links:</span><a href="http://askme.a2hosted.com/home/Admin" className="usefulLinks">Admin</a>
+            <div className="App">
+                <div className="row">
+                    <div className="col-sm-6">
+                        <Widget
+                            handleNewUserMessage={this.handleNewUserMessage}
+                            profileAvatar={logo}
+                            title="ChatBot.ai"
+                            subtitle="TCS Chat Product"
+                            toggleChat={true}
+                            showChat={true}
+                            launch={true}
+                            customLauncher={true}
+                        />
+                    </div>
+                    <div className="col-sm-6">
+                        <div id="suggestion" className="suggestionBox" >
+                            <div class="suggestionheader">You can say things like: <img src={tick} /></div> <hr />
+                            <div id="suggestionBody"> Loading Suggestions </div>
+                            <div class="suggestionFooter"><img src={loading} /></div> <hr />
+                            <div className="usefulLinkheader">
+                                <span>Useful Links:</span><a href="http://askme.a2hosted.com/home/Admin" className="usefulLinks">Admin</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <input type="hidden" id="node" value="0" />
