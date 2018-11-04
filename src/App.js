@@ -171,7 +171,7 @@ class App extends Component {
                     </div>
                     <div className="col-sm-6">
                         <div id="suggestion" className="suggestionBox" >
-                            <div class="suggestionheader">You can say things like: <img src={tick} /></div> <hr />
+                            <div class="suggestionheader">You can ask things like: <img src={tick} /></div> <hr />
                             <div id="suggestionBody"> Loading Suggestions </div>
                             <div class="suggestionFooter"><img src={loading} /></div> <hr />
                             <div className="usefulLinkheader">
