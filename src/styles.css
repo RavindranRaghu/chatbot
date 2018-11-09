@@ -32,6 +32,10 @@
     vertical-align: middle
 }
 
+.rcw-message-text p{
+    white-space:pre-wrap;
+}
+
 .rcw-full-screen .rcw-header {
     border-radius: 0;
     -ms-flex-negative: 0;
@@ -507,4 +511,8 @@ hr {
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+}
+
+body {
+    background-color:#f4f7f9;
 }

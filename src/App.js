@@ -132,7 +132,7 @@ class App extends Component {
                         response: result
                     });
                     var responseText = result.response;
-                    responseText = responseText.replace(/<br>/g, "");
+                    responseText = responseText.replace(/<br>/g, "\r\n");
                     addResponseMessage(responseText)
                     document.getElementById("node").value = result.node;
                     console.log("node:" + result.node);
