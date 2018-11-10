@@ -21,7 +21,7 @@
     "webpack-cli": "^3.1.2"
   },
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "set PORT=8080 && webpack-dev-server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
