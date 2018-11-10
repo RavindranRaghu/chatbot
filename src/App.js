@@ -1,4 +1,6 @@
-﻿import React, { Component } from 'react';
+﻿import "@babel/polyfill";
+import 'js-polyfills'
+import React, { Component } from 'react';
 import { Widget, addResponseMessage, addLinkSnippet, addUserMessage } from 'react-chat-widget';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
