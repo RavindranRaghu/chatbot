@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\node_modules",
+    "\\node_modules\\react-chat-widget",
+    "\\node_modules\\react-chat-widget\\dev",
+    "\\node_modules\\react-scripts",
+    "\\node_modules\\react-scripts\\scripts",
     "\\public",
     "\\src"
   ],
+  "SelectedNode": "\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }
