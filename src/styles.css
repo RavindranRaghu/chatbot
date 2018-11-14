@@ -36,6 +36,10 @@
     white-space:pre-wrap;
 }
 
+#suggestionRcwHeader {
+    display:none;
+}
+
 .rcw-full-screen .rcw-header {
     border-radius: 0;
     -ms-flex-negative: 0;
@@ -88,11 +92,23 @@
         width: 20px;
         height: 20px
     }
+
+    #suggestionRcwHeader{
+        display:block;
+    }
+
+    .suggestionHeaderName {
+        font-weight:bold;
+    }
+
+    .suggestionHeaderItem {
+        font-style:italic;
+    }
 }
 
 .rcw-messages-container {
     background-color: #fff;
-    height: 75vh;
+    height: 80vh;
     max-height: 610px;
     overflow-y: hidden;
     padding-top: 10px
@@ -405,7 +421,7 @@
 }
 
 .rcw-avatar {
-    width: 40px;
+    /*width: 40px;*/
     height: 40px;
     border-radius: 100%;
     margin-right: 10px
@@ -445,14 +461,17 @@
     flex: 1;
 }
 
-
+.suggestionCol {
+   text-align:left;
+}
 
 .suggestionBox {
     display: inline-block;
-    margin-top:150px;
+    margin-top: 150px;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     min-height: 400px;
+    text-align:left;
     background: white; /*#B8ED01;*/
     /*border: 1px solid rgba(255,255,255,0.15);*/
     border-radius: 4px;
@@ -515,4 +534,22 @@ html, body {
 
 body {
     background-color:#f4f7f9;
+}
+
+@media screen and (max-width:1400px) {
+    .suggestionCol {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .suggestionCol {
+        text-align:right;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .suggestionCol {
+        text-align: right;
+    }
 }

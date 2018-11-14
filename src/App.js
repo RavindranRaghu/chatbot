@@ -45,7 +45,7 @@ class App extends Component {
             document.getElementsByClassName("rcw-send")[0].addEventListener('click', function () {
                 var node = document.getElementById("node").value;
                 var sessionId = document.getElementById("sessionId").value;
-                var message = document.getElementsByClassName("rcw-new-message")[0].value;
+                var message = document.getElementsByClassName("rcw-new-message")[0].value;                
                 var app = new App;
                 app.fetchResponse(message, node, sessionId);
             });
@@ -91,6 +91,20 @@ class App extends Component {
                     });
                     document.getElementById("suggestionBody").innerHTML = suggestList;
                     document.getElementsByClassName("suggestionFooter")[0].style.display = "none";
+
+                    suggestList = '<span class="suggestionHeaderName">Suggestions: </span>';
+                    var counter =0;
+                    result.suggest.forEach(function (item) {
+                        suggestList = suggestList + '<span class="suggestionHeaderItem">' + item + '</span>';
+                        counter = counter + 1;
+                        if (counter < result.suggest.length) {
+                            suggestList = suggestList + '; '
+                        }
+                    });
+                    var headerHtml = '<h4 class="rcw-title">ChatBot.ai</h4><div id="suggestionRcwHeader">' + suggestList+'</div>';
+                    document.getElementsByClassName("rcw-header")[0].innerHTML = headerHtml;
+                    
+
                 },
                 (error) => {
                     this.setState({
@@ -135,7 +149,7 @@ class App extends Component {
                     });
                     var responseText = result.response;
                     responseText = responseText.replace(/<br>/g, "\r\n");
-                    addResponseMessage(responseText)
+                    addResponseMessage(responseText);
                     document.getElementById("node").value = result.node;
                     console.log("node:" + result.node);
                     var suggestList = '';
@@ -144,6 +158,18 @@ class App extends Component {
                     });
                     document.getElementById("suggestionBody").innerHTML = suggestList;
                     document.getElementsByClassName("suggestionFooter")[0].style.display = "none";
+
+                    suggestList = '<span class="suggestionHeaderName">Suggestions: </span>';
+                    var counter = 0;
+                    result.suggest.forEach(function (item) {
+                        suggestList = suggestList + '<span class="suggestionHeaderItem">' + item + '</span>';
+                        counter = counter + 1;
+                        if (counter < result.suggest.length) {
+                            suggestList = suggestList + '; '
+                        }
+                    });
+                    var headerHtml = '<h4 class="rcw-title">ChatBot.ai</h4><div id="suggestionRcwHeader">' + suggestList + '</div>';
+                    document.getElementsByClassName("rcw-header")[0].innerHTML = headerHtml;
                 },
                 (error) => {
                     this.setState({
@@ -171,13 +197,13 @@ class App extends Component {
                             customLauncher={true}
                         />
                     </div>
-                    <div className="col-sm-6">
+                    <div className="col-sm-6 suggestionCol">
                         <div id="suggestion" className="suggestionBox" >
-                            <div class="suggestionheader">You can ask things like: <img src={tick} /></div> <hr />
+                            <div class="suggestionheader">Suggestion to ask: <img src={tick} /></div> <hr />
                             <div id="suggestionBody"> Loading Suggestions </div>
                             <div class="suggestionFooter"><img src={loading} /></div> <hr />
                             <div className="usefulLinkheader">
-                                <span>Useful Links:</span><a href="http://askme.a2hosted.com/home/Admin" className="usefulLinks">Admin</a>
+                                <span>Useful Links:</span><a href="http://askme.a2hosted.com/Admin" className="usefulLinks">Admin</a>
                             </div>
                         </div>
                     </div>
