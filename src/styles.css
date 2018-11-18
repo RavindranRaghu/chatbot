@@ -102,7 +102,12 @@
     }
 
     .suggestionHeaderItem {
-        font-style:italic;
+        font-style: italic;
+        background-color: whitesmoke;
+        color: #01acc1;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 5px;
     }
 }
 

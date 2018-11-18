@@ -98,7 +98,7 @@ class App extends Component {
                         suggestList = suggestList + '<span class="suggestionHeaderItem">' + item + '</span>';
                         counter = counter + 1;
                         if (counter < result.suggest.length) {
-                            suggestList = suggestList + '; '
+                            suggestList = suggestList + ' '
                         }
                     });
                     var headerHtml = '<h4 class="rcw-title">ChatBot.ai</h4><div id="suggestionRcwHeader">' + suggestList+'</div>';
@@ -128,6 +128,9 @@ class App extends Component {
         if (footer != null) {
             footer.style.display = "block";
         }
+
+        var headerHtml = '<h4 class="rcw-title">ChatBot.ai</h4><div id="suggestionRcwHeader">loading response... </div>';
+        document.getElementsByClassName("rcw-header")[0].innerHTML = headerHtml;
 
         var myHeaders = new Headers();
         myHeaders.append('Access-Control-Allow-Origin', '*');
@@ -165,7 +168,7 @@ class App extends Component {
                         suggestList = suggestList + '<span class="suggestionHeaderItem">' + item + '</span>';
                         counter = counter + 1;
                         if (counter < result.suggest.length) {
-                            suggestList = suggestList + '; '
+                            suggestList = suggestList + ' '
                         }
                     });
                     var headerHtml = '<h4 class="rcw-title">ChatBot.ai</h4><div id="suggestionRcwHeader">' + suggestList + '</div>';
